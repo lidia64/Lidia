@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lidia</title>
     <link rel="stylesheet" href="styles.css">
+    
+<!-- In your <head> tag -->
+<script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+<style>
+  #webchat .bpWebchat {
+    position: unset;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  #webchat .bpFab {
+    display: none;
+  }
+</style>
+
+
 </head>
 <body>
 
@@ -41,7 +59,53 @@
         </div>
        </section>
     <!--     embed botpress chatbot -->
-  
+    
+<!-- Put this on your page BEFORE the script below -->
+<div id="webchat" style="width: 500px; height: 500px;"></div>
+
+  <!--script for chat bot -->
+<script>
+  window.botpress.on("webchat:ready", () => {
+    window.botpress.open();
+  });
+  window.botpress.init({
+  "botId": "43ee42ea-40f4-4491-b383-2d84eed33cc9",
+  "configuration": {
+    "composerPlaceholder": "who are you?",
+    "botName": "LIdia Uwineza",
+    "botDescription": "Lidia AI chat bot",
+    "website": {
+      "title": "https://lidiauwinez.netlify.app/",
+      "link": "https://lidiauwinez.netlify.app/"
+    },
+    "email": {
+      "title": "luwineza64@gmail.com",
+      "link": "luwineza64@gmail.com"
+    },
+    "phone": {
+      "title": "+250798226153",
+      "link": "+250798226153"
+    },
+    "termsOfService": {
+      "title": "Terms of service",
+      "link": "http://lidia64.github.io/Lidia"
+    },
+    "privacyPolicy": {
+      "title": "Privacy policy",
+      "link": "http://lidia64.github.io/Lidia"
+    },
+    "color": "#bf9c1f",
+    "variant": "solid",
+    "themeMode": "light",
+    "fontFamily": "fira",
+    "radius": 1,
+    "allowFileUpload": true
+  },
+  "clientId": "f9270f69-02c1-4a52-ba56-8d44b15cec1c",
+  "selector": "#webchat"
+});
+</script>
+
    
 <!-- skills section -->
     <section id="skills" class="skills">
